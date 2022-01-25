@@ -136,6 +136,12 @@
 
   function addStyle() {
     var styles = document.head.getElementsByTagName('style');
+
+    /** 
+     * This makes an assumption that the theme style will 
+     * be the last style tag in preview frame's head, and will fail if
+     * that assumption is false
+    **/
     var themeStyle = styles[styles.length - 1].innerHTML;
     var styleEl = document.createElement('style');
     styleEl.id = 'customTheme'
@@ -375,4 +381,4 @@
           
       
           
-            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.9fa2d00b.iframe.bundle.js"></script><script src="vendors~main.7a6d8f76.iframe.bundle.js"></script><script src="main.1c99a665.iframe.bundle.js"></script></body></html>
+            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.bd7fb998.iframe.bundle.js"></script><script src="vendors~main.3f8e7456.iframe.bundle.js"></script><script src="main.9f78cc9a.iframe.bundle.js"></script></body></html>
