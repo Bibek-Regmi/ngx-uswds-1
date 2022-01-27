@@ -155,10 +155,14 @@
   function listenForThemesChange() {
     const select = window.parent.document.body.querySelector('.os-content select');
     select.addEventListener('change', (event) => {
+      const val = event.target.value;
       setTimeout(() => {
+        // A bit strange, but something in between the set timeout can occasionally revert the value,
+        // so we set it back to the correct one
+        event.target.value = val;
         deleteStyle();
         addStyle();
-      })
+      });
     });
   }
 
@@ -166,11 +170,9 @@
     removeMainCss();
     addStyle();
     listenForThemesChange();
-    var contents = window.parent.document.getElementsByClassName('os-content');
+    var contents = window.parent.document.querySelectorAll('div[role="main"] .os-content');
     for (let i = 0; i < contents.length; i++) {
-      if (i > 0) {
-        contents[i].classList.add('bg-primary-darker')
-      }
+      contents[i].classList.add('bg-primary-darker')
     }
   });</script><link href="main.css" rel="stylesheet"><style>#root[hidden],
       #docs-root[hidden] {
@@ -385,4 +387,4 @@
           
       
           
-            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.08ca18c2.iframe.bundle.js"></script><script src="vendors~main.4b95e0b6.iframe.bundle.js"></script><script src="main.f5025321.iframe.bundle.js"></script></body></html>
+            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.865af8e3.iframe.bundle.js"></script><script src="vendors~main.3661e535.iframe.bundle.js"></script><script src="main.279c637f.iframe.bundle.js"></script></body></html>
